@@ -214,31 +214,7 @@ selectApi(){
 	fi
 }
 common_set(){
-	stty erase '^H' && read -p "NODE_ID(num_only):" NODE_ID
-	stty erase '^H' && read -p "SPEEDTEST_CIRCLE(num_only,default:0):" SPEEDTEST
-	[[ -z ${SPEEDTEST} ]] && SPEEDTEST="0"
-	stty erase '^H' && read -p "CLOUDSAFE_ON(0 or 1,default:0,advise:0!):" CLOUDSAFE
-	[[ -z ${CLOUDSAFE} ]] && CLOUDSAFE="0"
-	stty erase '^H' && read -p "ANTISSATTACK(0 or 1,default:0):" ANTISSATTACK
-	[[ -z ${ANTISSATTACK} ]] && ANTISSATTACK="0"
-	stty erase '^H' && read -p "MU_SUFFIX(default:zhaoj.in):" MU_SUFFIX
-	[[ -z ${MU_SUFFIX} ]] && MU_SUFFIX="zhaoj.in"
-	stty erase '^H' && read -p "MU_REGEX(default:%5m%id.%suffix):" MU_REGEX
-	[[ -z ${MU_REGEX} ]] && MU_REGEX="%5m%id.%suffix"	
-}
-modwebapi_set(){
-	stty erase '^H' && read -p "WEBAPI_URL(example: https://www.zhaoj.in):" WEBAPI_URL
-	stty erase '^H' && read -p "WEBAPI_TOKEN(example: zhaoj.in):" WEBAPI_TOKEN
-}
-mysql_set(){
-	stty erase '^H' && read -p "MYSQL_HOST(IP addr or domain):" MYSQL_HOST
-	stty erase '^H' && read -p "MYSQL_PORT(default:3306):" MYSQL_PORT
-	[[ -z ${MYSQL_PORT} ]] && MYSQL_PORT="3306"
-	stty erase '^H' && read -p "MYSQL_USER(default:root):" MYSQL_USER
-	[[ -z ${MYSQL_USER} ]] && MYSQL_USER="root"
-	stty erase '^H' && read -p "MYSQL_PASS:" MYSQL_PASS
-	stty erase '^H' && read -p "MYSQL_DB(default:sspanel):" MYSQL_DB
-	[[ -z ${MYSQL_DB} ]] && MYSQL_DB="sspanel"
+	stty erase '^H' && read -p "NODE_ID(num_only):" NODE_ID	
 }
 modify_ALL(){
 	modify_CLOUDSAFE
