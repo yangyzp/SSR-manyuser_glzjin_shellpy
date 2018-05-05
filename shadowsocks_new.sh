@@ -223,13 +223,13 @@ modify_MYSQL(){
 }
 selectApi(){
 	echo -e "${Yellow} 请选择 API 模式: ${Font}"
-	echo -e "1.modwebapi"
-	echo -e "2.glzjinmod(mysql_connect)"
-	stty erase '^H' && read -p "(default:modwebapi):" API
+	echo -e "1.glzjinmod"
+	echo -e "2.modwebapi(mysql_connect)"
+	stty erase '^H' && read -p "(default:glzjinmod):" API
 	if [[ -z ${API} || ${API} == "1" ]]; then
-		API="modwebapi"
-	elif [[ ${API} == "2" ]]; then
 		API="glzjinmod"
+	elif [[ ${API} == "2" ]]; then
+		API="modwebapi"
 	else
 		echo -e "${Error} you can only select in 1 or 2"
 		exit 1
