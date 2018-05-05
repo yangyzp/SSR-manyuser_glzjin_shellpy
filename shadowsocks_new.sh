@@ -198,6 +198,7 @@ modify_API(){
 }
 modify_NODE_ID(){
 	sed -i '/NODE_ID/c \NODE_ID = '${NODE_ID}'' ${config}
+}	
 selectApi(){
 	echo -e "${Yellow} 请选择 API 模式: ${Font}"
 	echo -e "1.modwebapi"
