@@ -198,7 +198,29 @@ modify_API(){
 }
 modify_NODE_ID(){
 	sed -i '/NODE_ID/c \NODE_ID = '${NODE_ID}'' ${config}
-}	
+}
+modify_MYSQL_HOST(){
+	sed -i '/MYSQL_HOST/c \MYSQL_HOST = '\'${MYSQL_HOST}\''' ${config}
+}
+modify_MYSQL_PORT(){
+	sed -i '/MYSQL_PORT/c \MYSQL_PORT = '${MYSQL_PORT}'' ${config}
+}
+modify_MYSQL_USER(){
+	sed -i '/MYSQL_USER/c \MYSQL_USER = '\'${MYSQL_USER}\''' ${config}
+}
+modify_MYSQL_PASS(){
+	sed -i '/MYSQL_PASS/c \MYSQL_PASS = '\'${MYSQL_PASS}\''' ${config}
+}
+modify_MYSQL_DB(){
+	sed -i '/MYSQL_DB/c \MYSQL_DB = '\'${MYSQL_DB}\''' ${config}
+}
+modify_MYSQL(){
+	modify_MYSQL_HOST
+	modify_MYSQL_PASS
+	modify_MYSQL_PORT
+	modify_MYSQL_USER
+	modify_MYSQL_DB
+}
 selectApi(){
 	echo -e "${Yellow} 请选择 API 模式: ${Font}"
 	echo -e "1.modwebapi"
@@ -215,6 +237,17 @@ selectApi(){
 }
 common_set(){
 	stty erase '^H' && read -p "NODE_ID(num_only):" NODE_ID	
+}
+mysql_set(){
+	stty erase '^H' && read -p "MYSQL_HOST(IP addr or domain;default:23.234.197.24):" MYSQL_HOST
+	[[ -z ${MYSQL_PORT} ]] && MYSQL_HOST="23.234.197.24"
+	stty erase '^H' && read -p "MYSQL_PORT(default:3306):" MYSQL_PORT
+	[[ -z ${MYSQL_PORT} ]] && MYSQL_PORT="3306"
+	stty erase '^H' && read -p "MYSQL_USER(default:root):" MYSQL_USER
+	[[ -z ${MYSQL_USER} ]] && MYSQL_USER="sspanel"
+	stty erase '^H' && read -p "MYSQL_PASS:" MYSQL_PASS
+	stty erase '^H' && read -p "MYSQL_DB(default:sspanel):" MYSQL_DB
+	[[ -z ${MYSQL_DB} ]] && MYSQL_DB="sspanel"
 }
 modify_ALL(){
 	modify_CLOUDSAFE
