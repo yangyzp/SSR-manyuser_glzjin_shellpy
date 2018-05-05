@@ -243,7 +243,7 @@ mysql_set(){
 	[[ -z ${MYSQL_PORT} ]] && MYSQL_HOST="23.234.197.24"
 	stty erase '^H' && read -p "MYSQL_PORT(default:3306):" MYSQL_PORT
 	[[ -z ${MYSQL_PORT} ]] && MYSQL_PORT="3306"
-	stty erase '^H' && read -p "MYSQL_USER(default:root):" MYSQL_USER
+	stty erase '^H' && read -p "MYSQL_USER(default:sspanel):" MYSQL_USER
 	[[ -z ${MYSQL_USER} ]] && MYSQL_USER="sspanel"
 	stty erase '^H' && read -p "MYSQL_PASS:" MYSQL_PASS
 	stty erase '^H' && read -p "MYSQL_DB(default:sspanel):" MYSQL_DB
