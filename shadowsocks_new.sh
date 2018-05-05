@@ -198,50 +198,6 @@ modify_API(){
 }
 modify_NODE_ID(){
 	sed -i '/NODE_ID/c \NODE_ID = '${NODE_ID}'' ${config}
-}
-modify_SPEEDTEST(){
-	sed -i '/SPEED/c \SPEEDTEST = '${SPEEDTEST}'' ${config}
-}
-modify_CLOUDSAFE(){
-	sed -i '/CLOUD/c \CLOUDSAFE = '${CLOUDSAFE}'' ${config}
-}
-modify_ANTISSATTACK(){
-	sed -i '/ANTISS/c \ANTISSATTACK = '${ANTISSATTACK}'' ${config}
-}
-modify_MU_SUFFIX(){
-	sed -i '/MU_SUFFIX/c \MU_SUFFIX = '\'${MU_SUFFIX}\''' ${config}
-}
-modify_MU_REGEX(){
-	sed -i '/MU_REGEX/c \MU_REGEX = '\'${MU_REGEX}\''' ${config}
-}
-modify_WEBAPI_URL(){
-	sed -i '/WEBAPI_URL/c \WEBAPI_URL = '\'${WEBAPI_URL}\''' ${config}
-}
-modify_WEBAPI_TOKEN(){
-	sed -i '/WEBAPI_TOKEN/c \WEBAPI_TOKEN = '\'${WEBAPI_TOKEN}\''' ${config}
-}
-modify_MYSQL_HOST(){
-	sed -i '/MYSQL_HOST/c \MYSQL_HOST = '\'${MYSQL_HOST}\''' ${config}
-}
-modify_MYSQL_PORT(){
-	sed -i '/MYSQL_PORT/c \MYSQL_PORT = '${MYSQL_PORT}'' ${config}
-}
-modify_MYSQL_USER(){
-	sed -i '/MYSQL_USER/c \MYSQL_USER = '\'${MYSQL_USER}\''' ${config}
-}
-modify_MYSQL_PASS(){
-	sed -i '/MYSQL_PASS/c \MYSQL_PASS = '\'${MYSQL_PASS}\''' ${config}
-}
-modify_MYSQL_DB(){
-	sed -i '/MYSQL_DB/c \MYSQL_DB = '\'${MYSQL_DB}\''' ${config}
-}
-modify_MYSQL(){
-	modify_MYSQL_HOST
-	modify_MYSQL_PASS
-	modify_MYSQL_PORT
-	modify_MYSQL_USER
-	modify_MYSQL_DB
-}
 selectApi(){
 	echo -e "${Yellow} 请选择 API 模式: ${Font}"
 	echo -e "1.modwebapi"
