@@ -285,7 +285,7 @@ SSR_installation(){
 	development_tools_installation
 	libsodium_installation
 	
-	cd ${shadowsocks_install_folder} && git clone -b manyuser https://github.com/yangyzp/shadowsockspy.git 
+	cd ${shadowsocks_install_folder} && git clone -b manyuser https://github.com/dumplin233/shadowsocks.git 
 	cd shadowsocks && cp apiconfig.py userapiconfig.py && cp config.json user-config.json
 	
 	SSR_dependency_installation
